@@ -1,17 +1,1670 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <meta charset="UTF-8" />
+  <title>Instituto Tanigawa – Mentoria, Discipulado, NR-1 e Livros</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Instituto Tanigawa – Mentoria, discipulado, aconselhamento, pastoreio, livros, e-books e Projeto NR-1 para empresas. Vida, família e negócios alinhados com propósito, sabedoria e excelência." />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Sora:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --bg-alt: #ffffff;
+      --bg-soft: #e3edf5;
+      --text: #102033;
+      --text-soft: #4d6179;
+      --accent: #0f6299;
+      --accent-soft: #1ba5b8;
+      --accent-soft-2: #88c8b8;
+      --border-soft: #d4dde8;
+      --shadow-soft: 0 18px 40px rgba(4, 25, 53, 0.12);
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --radius-pill: 999px;
+      --transition-fast: 0.18s ease-out;
+      --transition-med: 0.25s ease;
+    }
+
+    [data-theme="dark"] {
+      --bg: #050713;
+      --bg-alt: #0c1321;
+      --bg-soft: #121b2c;
+      --text: #f7fbff;
+      --text-soft: #c2cde0;
+      --accent: #47b5ff;
+      --accent-soft: #37d4c6;
+      --accent-soft-2: #96f2c6;
+      --border-soft: #28344a;
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.7);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Sora", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, rgba(28, 81, 142, 0.12), transparent 55%), var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Layout base */
+
+    .shell {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(to bottom, rgba(245, 247, 250, 0.95), rgba(245, 247, 250, 0.7));
+      border-bottom: 1px solid rgba(212, 221, 232, 0.6);
+    }
+    [data-theme="dark"] header {
+      background: linear-gradient(to bottom, rgba(5, 7, 19, 0.97), rgba(5, 7, 19, 0.8));
+      border-bottom-color: rgba(40, 52, 74, 0.7);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      background: radial-gradient(circle at 20% 15%, #ffffff 0, #cfe7ff 30%, #0f6299 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 25px rgba(12, 70, 128, 0.4);
+      font-weight: 700;
+      font-size: 18px;
+      color: #0a2540;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-text span:first-child {
+      font-family: "Playfair Display", serif;
+      font-size: 18px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .brand-text span:last-child {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-soft);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .nav-links a {
+      padding: 6px 8px;
+      border-radius: 999px;
+      color: var(--text-soft);
+      transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .nav-links a:hover {
+      background: rgba(15, 98, 153, 0.08);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn {
+      border: none;
+      outline: none;
+      border-radius: var(--radius-pill);
+      padding: 9px 18px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background var(--transition-med), color var(--transition-med), box-shadow var(--transition-med), transform var(--transition-fast);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+      color: #ffffff;
+      box-shadow: 0 12px 30px rgba(15, 98, 153, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(15, 98, 153, 0.6);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-soft);
+      border: 1px solid var(--border-soft);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--accent);
+    }
+
+    .theme-toggle {
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 12px;
+      background: rgba(12, 19, 37, 0.04);
+      color: var(--text-soft);
+    }
+
+    main {
+      padding-bottom: 80px;
+    }
+
+    section {
+      padding: 60px 0;
+    }
+
+    /* Hero */
+
+    .hero {
+      padding-top: 40px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      gap: 40px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--accent-soft);
+      margin-bottom: 10px;
+    }
+
+    .hero-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(32px, 4vw, 40px);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .hero-title span.highlight {
+      background: linear-gradient(120deg, var(--accent), var(--accent-soft-2));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 15px;
+      color: var(--text-soft);
+      max-width: 460px;
+      margin-bottom: 26px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    .tag-pill {
+      border-radius: 999px;
+      padding: 6px 12px;
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid var(--border-soft);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    [data-theme="dark"] .tag-pill {
+      background: rgba(10, 15, 26, 0.9);
+    }
+
+    .hero-card {
+      position: relative;
+      background: radial-gradient(circle at 10% 0, rgba(255, 255, 255, 0.12), transparent 60%), var(--bg-alt);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      padding: 24px 24px 20px;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      opacity: 0.2;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(71, 181, 255, 0.25), transparent 60%),
+        radial-gradient(circle at 70% 80%, rgba(55, 212, 198, 0.3), transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-card-header {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      z-index: 1;
+    }
+
+    .hero-avatar-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero-avatar-initials {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      box-shadow: 0 10px 25px rgba(10, 61, 98, 0.6);
+    }
+
+    .hero-avatar-text {
+      font-size: 13px;
+    }
+
+    .hero-avatar-text strong {
+      display: block;
+      font-size: 13px;
+    }
+
+    .hero-avatar-text span {
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    .hero-pill {
+      font-size: 11px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(5, 12, 27, 0.06);
+      color: var(--text-soft);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .hero-list {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 18px;
+      padding-left: 18px;
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    .hero-list li + li {
+      margin-top: 6px;
+    }
+
+    .hero-badges {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11px;
+    }
+
+    .hero-badge {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      background: rgba(2, 10, 23, 0.08);
+      color: var(--text-soft);
+    }
+
+    /* Seções genéricas */
+
+    .section-heading {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 26px;
+    }
+
+    .section-heading h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 26px;
+    }
+
+    .section-heading p {
+      font-size: 14px;
+      color: var(--text-soft);
+      max-width: 560px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 32px;
+    }
+
+    .card {
+      background: var(--bg-alt);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 10px 26px rgba(8, 21, 40, 0.08);
+      padding: 20px 22px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: auto -20% -40%;
+      height: 40%;
+      background: radial-gradient(circle at 50% 0, rgba(71, 181, 255, 0.16), transparent 60%);
+      opacity: 0;
+      transition: opacity var(--transition-med), transform var(--transition-med);
+      transform: translateY(20px);
+      pointer-events: none;
+    }
+
+    .card:hover::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: var(--text-soft);
+    }
+
+    .pill-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent-soft);
+      margin-bottom: 6px;
+    }
+
+    /* Exploração Visual */
+
+    .path-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .path-card {
+      padding: 20px 18px;
+      border-radius: var(--radius-md);
+      background: var(--bg-alt);
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 10px 24px rgba(12, 36, 65, 0.07);
+      cursor: pointer;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .path-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      opacity: 0;
+      background: radial-gradient(circle at 10% 0, rgba(71, 181, 255, 0.18), transparent 50%);
+      transition: opacity var(--transition-med);
+    }
+
+    .path-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent-soft);
+      box-shadow: 0 18px 40px rgba(15, 98, 153, 0.28);
+      background: linear-gradient(135deg, rgba(15, 98, 153, 0.12), rgba(55, 212, 198, 0.08));
+    }
+
+    .path-card:hover::before {
+      opacity: 1;
+    }
+
+    .path-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .path-subtitle {
+      font-size: 13px;
+      color: var(--text-soft);
+      margin-bottom: 10px;
+    }
+
+    .path-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    .path-arrow {
+      font-size: 20px;
+      position: absolute;
+      right: 14px;
+      bottom: 10px;
+      opacity: 0.75;
+    }
+
+    /* Sobre nós */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 28px;
+    }
+
+    .about-highlight {
+      background: linear-gradient(145deg, var(--bg-alt), var(--bg-soft));
+      border-radius: var(--radius-lg);
+      padding: 24px 22px;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .about-highlight p {
+      font-size: 14px;
+      color: var(--text-soft);
+      margin-bottom: 12px;
+    }
+
+    .about-highlight strong {
+      color: var(--accent);
+    }
+
+    .about-values {
+      font-size: 13px;
+      color: var(--text-soft);
+      border-left: 3px solid var(--accent-soft);
+      padding-left: 12px;
+      margin-top: 8px;
+    }
+
+    .about-people {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      font-size: 13px;
+    }
+
+    .about-person {
+      padding: 14px 14px 12px;
+      border-radius: var(--radius-md);
+      background: var(--bg-alt);
+      border: 1px solid var(--border-soft);
+    }
+
+    .about-person strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .about-person span {
+      display: block;
+      font-size: 11px;
+      color: var(--text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 6px;
+    }
+
+    /* Listas de serviço */
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .pill-soft {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 98, 153, 0.08);
+      color: var(--accent);
+    }
+
+    .service-list {
+      list-style: none;
+      font-size: 14px;
+      color: var(--text-soft);
+    }
+
+    .service-list li + li {
+      margin-top: 6px;
+    }
+
+    .badge-small {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-soft);
+      margin-bottom: 6px;
+    }
+
+    /* Livros */
+
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .book-card {
+      background: var(--bg-alt);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-soft);
+      padding: 16px 16px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .book-tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent-soft);
+    }
+
+    .book-title {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .book-desc {
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    /* NR-1 */
+
+    .nr-panel {
+      background: linear-gradient(135deg, #071426, #0e3654);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      color: #ecf5ff;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55);
+    }
+
+    .nr-panel::after {
+      content: "";
+      position: absolute;
+      inset: -30%;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(71, 181, 255, 0.45), transparent 55%),
+        radial-gradient(circle at 80% 80%, rgba(55, 212, 198, 0.45), transparent 60%);
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .nr-panel-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .nr-title {
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .nr-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11px;
+      margin: 10px 0 14px;
+    }
+
+    .nr-badge {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(236, 245, 255, 0.6);
+      background: rgba(2, 9, 19, 0.4);
+    }
+
+    .nr-text {
+      font-size: 14px;
+      color: #dde8ff;
+      max-width: 560px;
+    }
+
+    .nr-sub {
+      font-size: 12px;
+      margin-top: 10px;
+      color: #b7c9f3;
+    }
+
+    /* Depoimentos */
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+
+    .testimonial {
+      border-radius: var(--radius-md);
+      background: var(--bg-alt);
+      border: 1px solid var(--border-soft);
+      padding: 16px 16px 12px;
+      font-size: 13px;
+    }
+
+    .testimonial p {
+      color: var(--text-soft);
+      margin-bottom: 10px;
+    }
+
+    .testimonial strong {
+      font-size: 13px;
+    }
+
+    .testimonial span {
+      display: block;
+      font-size: 11px;
+      color: var(--text-soft);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* Recurso gratuito */
+
+    .free-panel {
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, rgba(15, 98, 153, 0.06), rgba(55, 212, 198, 0.04));
+      border: 1px dashed rgba(27, 165, 184, 0.6);
+      padding: 20px 20px 18px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 16px;
+      align-items: center;
+    }
+
+    .free-panel h3 {
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .free-panel p {
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    .free-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .free-form input {
+      flex: 1 1 180px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-soft);
+      padding: 10px 14px;
+      font-size: 13px;
+      background: #ffffff;
+    }
+    [data-theme="dark"] .free-form input {
+      background: #050813;
+      color: var(--text);
+    }
+
+    /* Contato */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 28px;
+    }
+
+    .contact-form {
+      background: var(--bg-alt);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-soft);
+      padding: 20px 18px 18px;
+      box-shadow: 0 14px 32px rgba(8, 21, 40, 0.12);
+    }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 12px;
+    }
+
+    .field-group label {
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    .field-group input,
+    .field-group textarea,
+    .field-group select {
+      border-radius: 12px;
+      border: 1px solid var(--border-soft);
+      padding: 9px 11px;
+      font-size: 13px;
+      font-family: inherit;
+      background: #ffffff;
+    }
+
+    [data-theme="dark"] .field-group input,
+    [data-theme="dark"] .field-group textarea,
+    [data-theme="dark"] .field-group select {
+      background: #050813;
+      color: var(--text);
+    }
+
+    .field-group textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .contact-info {
+      font-size: 14px;
+      color: var(--text-soft);
+    }
+
+    .contact-info p + p {
+      margin-top: 10px;
+    }
+
+    .contact-taglist {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+      font-size: 11px;
+    }
+
+    .contact-tag {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 98, 153, 0.08);
+      color: var(--accent);
+    }
+
+    footer {
+      border-top: 1px solid var(--border-soft);
+      padding: 18px 0 28px;
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+
+    /* Responsivo */
+
+    @media (max-width: 960px) {
+      .hero-grid,
+      .grid-2,
+      .about-grid,
+      .free-panel,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding-top: 24px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .header-inner {
+        flex-wrap: wrap;
+        align-items: flex-start;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      section {
+        padding: 42px 0;
+      }
+
+      .path-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .about-people {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body data-theme="light">
+  <header>
+    <div class="shell header-inner">
+      <div class="brand">
+        <div class="brand-mark">IT</div>
+        <div class="brand-text">
+          <span>Instituto Tanigawa</span>
+          <span>Vida • Família • Negócios</span>
+        </div>
+      </div>
+
+      <nav>
+        <div class="nav-links">
+          <a href="#sobre">Sobre</a>
+          <a href="#caminhos">Caminhos</a>
+          <a href="#mentorias">Mentorias</a>
+          <a href="#discipulado">Discipulado</a>
+          <a href="#livros">Livros</a>
+          <a href="#nr1">Projeto NR-1</a>
+          <a href="#contato">Contato</a>
+        </div>
+        <div class="nav-cta">
+          <button class="btn btn-ghost theme-toggle" id="themeToggle">Modo Escuro</button>
+          <a href="#contato" class="btn btn-primary">Agendar conversa</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="topo">
+      <div class="shell hero-grid">
+        <div>
+          <div class="eyebrow">Mentoria • Discipulado • NR-1 • Livros</div>
+          <h1 class="hero-title">
+            Vida, família e negócios <span class="highlight">governados por propósito</span>.
+          </h1>
+          <p class="hero-subtitle">
+            O Instituto Tanigawa nasce da união entre espiritualidade, inteligência emocional
+            e estratégias práticas para que pessoas, famílias e organizações vivam alinhadas ao
+            que Deus sonhou — com profundidade, saúde e excelência.
+          </p>
+
+          <div class="hero-actions">
+            <button class="btn btn-primary" data-scroll-target="#caminhos">
+              Sou pessoa ou família
+            </button>
+            <button class="btn btn-ghost" data-scroll-target="#nr1">
+              Sou empresa (NR-1 / corporativo)
+            </button>
+          </div>
+
+          <div class="hero-tags">
+            <span class="tag-pill">Mentorias & Discipulados</span>
+            <span class="tag-pill">Aconselhamento & Pastoreio</span>
+            <span class="tag-pill">Livros, e-books & recursos</span>
+            <span class="tag-pill">Projeto NR-1 • Conformidade & cuidado</span>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Destaque Instituto Tanigawa">
+          <div class="hero-card-header">
+            <div class="hero-avatar-group">
+              <div class="hero-avatar-initials">S&W</div>
+              <div class="hero-avatar-text">
+                <strong>Sergio & Wanessa Tanigawa</strong>
+                <span>Pastores • Mentores • Fundadores</span>
+              </div>
+            </div>
+            <div class="hero-pill">Mentoria, cuidado e governança integral</div>
+          </div>
+
+          <ul class="hero-list">
+            <li>• Acompanhamento de pessoas, casais, famílias e líderes.</li>
+            <li>• Mentorias profundas para alinhamento de propósito e identidade.</li>
+            <li>• Projeto NR-1 para empresas: conformidade com cuidado psicossocial real.</li>
+          </ul>
+
+          <div class="hero-badges">
+            <div class="hero-badge">Integridade em casa, ministério e negócios</div>
+            <div class="hero-badge">Fé + psicologia + tecnologia a serviço de pessoas</div>
+            <div class="hero-badge">Legado transgeracional</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- CAMINHOS -->
+    <section id="caminhos">
+      <div class="shell">
+        <div class="section-heading">
+          <h2>Caminhos para quem chega ao Instituto Tanigawa</h2>
+          <p>
+            Aqui você escolhe por onde começar: cuidado pessoal e familiar, mentoria para líderes
+            e pastores, ou soluções corporativas para empresas que desejam alinhar NR-1,
+            psicossocial e propósito.
+          </p>
+        </div>
+
+        <div class="path-grid">
+          <div class="path-card" data-scroll-target="#mentorias">
+            <div class="path-title">Pessoas, casais e famílias</div>
+            <div class="path-subtitle">
+              Mentorias, discipulados e aconselhamentos para cura, alinhamento e
+              maturidade espiritual e emocional.
+            </div>
+            <div class="path-tags">
+              <span class="tag-pill">Mentoria de Propósito</span>
+              <span class="tag-pill">Discipulado e vida com Deus</span>
+              <span class="tag-pill">Casamento e família</span>
+            </div>
+            <span class="path-arrow">↘</span>
+          </div>
+
+          <div class="path-card" data-scroll-target="#nr1">
+            <div class="path-title">Empresas, líderes e organizações</div>
+            <div class="path-subtitle">
+              NR-1, diagnósticos psicossociais, gestão de risco e cultura saudável com base em
+              pessoas reais, não apenas em documentos.
+            </div>
+            <div class="path-tags">
+              <span class="tag-pill">NR-1, PGR & GRO</span>
+              <span class="tag-pill">Saúde mental corporativa</span>
+              <span class="tag-pill">Mentoria de líderes</span>
+            </div>
+            <span class="path-arrow">↘</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE NÓS -->
+    <section id="sobre">
+      <div class="shell about-grid">
+        <div>
+          <div class="section-heading">
+            <h2>Quem somos: vida, família e chamado em movimento</h2>
+            <p>
+              O Instituto Tanigawa nasce da história de Sergio e Wanessa: um casal que decidiu
+              obedecer à voz de Deus, cuidar de pessoas, famílias e empresas, e construir um
+              legado transgeracional com fé, inteligência e responsabilidade.
+            </p>
+          </div>
+
+          <div class="about-highlight">
+            <p><strong>Missão</strong></p>
+            <p>
+              Transformar vidas, famílias e organizações por meio de mentoria, discipulado,
+              aconselhamento, ciência humana, tecnologia e sabedoria espiritual — unindo fé e
+              prática para alinhar identidade, restaurar propósito e gerar crescimento integral.
+            </p>
+
+            <p style="margin-top:12px;"><strong>Visão</strong></p>
+            <p>
+              Ser referência na formação de pessoas, líderes e empresas maduras, saudáveis e
+              conscientes — construindo um legado de fé, inteligência, excelência e
+              transformação em todas as áreas da vida.
+            </p>
+
+            <p class="about-values">
+              Vivemos com integridade, servimos com amor, lideramos com sabedoria
+              e construímos um legado que transforma gerações.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <div class="about-people">
+            <div class="about-person">
+              <span>Fundador</span>
+              <strong>Sergio Tanigawa</strong>
+              <p>
+                Pastor, mentor e conselheiro. Lidera intercessão e mentoria em grandes
+                conferências no Brasil, com foco em cura, identidade e transformação de
+                mentalidade, tanto na vida pessoal quanto no ambiente corporativo.
+              </p>
+            </div>
+            <div class="about-person">
+              <span>Fundadora</span>
+              <strong>Wanessa Tanigawa</strong>
+              <p>
+                Pastora, psicóloga e mentora. Especialista em saúde emocional, família e
+                relacionamentos, une profundidade bíblica, escuta terapêutica e cuidado
+                integral em cada acompanhamento.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENTORIAS -->
+    <section id="mentorias">
+      <div class="shell">
+        <div class="section-heading">
+          <h2>Mentorias que alinham identidade, propósito e governo</h2>
+          <p>
+            Acompanhamentos estruturados para pessoas, casais, líderes e empresários que
+            desejam viver com clareza de propósito, maturidade espiritual e consistência
+            emocional — sem separar vida, família, ministério e negócios.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="pill-row">
+              <span class="pill-soft">Individual & Casal</span>
+              <span class="pill-soft">Online & presencial</span>
+            </div>
+            <h3>Mentoria de Propósito & Vida Espiritual</h3>
+            <p>
+              Encontros profundos para quem precisa reposicionar a vida diante de Deus:
+              identidade, chamados, decisões, cura de traumas, alinhamento emocional e
+              espiritual para próximos ciclos.
+            </p>
+
+            <ul class="service-list" style="margin-top:10px;">
+              <li>• Diagnóstico espiritual e emocional.</li>
+              <li>• Acompanhamento estratégico de decisões.</li>
+              <li>• Ferramentas práticas para rotina e disciplina espiritual.</li>
+              <li>• Espaço seguro para processar dores e transições.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="pill-row">
+              <span class="pill-soft">Pastores & Líderes</span>
+              <span class="pill-soft">Alta demanda & influência</span>
+            </div>
+            <h3>Mentoria para líderes, pastores e empresários</h3>
+            <p>
+              Foco em quem carrega peso de governo: gestão de pessoas, saúde emocional,
+              posicionamento espiritual e decisões estratégicas em ambientes de alta
+              responsabilidade.
+            </p>
+
+            <ul class="service-list" style="margin-top:10px;">
+              <li>• Mentoria 1:1 com Sergio e/ou Wanessa.</li>
+              <li>• Temas: identidade de líder, proteção emocional, decisões difíceis.</li>
+              <li>• Integração com família, ministério e negócios.</li>
+              <li>• Confidencialidade e escuta qualificada.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISCIPULADO & ACONSELHAMENTO -->
+    <section id="discipulado">
+      <div class="shell">
+        <div class="section-heading">
+          <h2>Discipulado, aconselhamento e pastoreio</h2>
+          <p>
+            Cuidado contínuo para quem não quer apenas “uma sessão”, mas um caminho
+            de construção: discipulados, grupos menores e acompanhamento pastoral
+            que tocam fé, emoções, hábitos e decisões.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <span class="badge-small">Discipulados & grupos menores</span>
+            <h3>Jornadas guiadas para maturidade</h3>
+            <p>
+              Trilhas temáticas (vida com Deus, família, finanças, mente, cura interior)
+              conduzidas de forma simples, profunda e prática, com materiais próprios,
+              devocionais e tarefas entre encontros.
+            </p>
+            <ul class="service-list" style="margin-top:10px;">
+              <li>• Conteúdo bíblico com aplicação no dia a dia.</li>
+              <li>• Espaço para perguntas, partilhas e prática.</li>
+              <li>• Materiais exclusivos do Instituto Tanigawa.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <span class="badge-small">Aconselhamento pastoral & terapêutico</span>
+            <h3>Escuta, direção e cura</h3>
+            <p>
+              Sessões de aconselhamento com Sergio e Wanessa para situações específicas:
+              crises, decisões difíceis, conflitos familiares, esgotamento emocional,
+              traumas espirituais e relacionais.
+            </p>
+            <ul class="service-list" style="margin-top:10px;">
+              <li>• Olhar espiritual, pastoral e psicológico integrado.</li>
+              <li>• Acolhimento sem julgamento, com verdade e amor.</li>
+              <li>• Planos de cuidado e acompanhamento.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVROS & EBOOKS -->
+    <section id="livros">
+      <div class="shell">
+        <div class="section-heading">
+          <h2>Livros, e-books e recursos para ir além do encontro</h2>
+          <p>
+            Conteúdos escritos que aprofundam aquilo que Deus tem derramado ao longo dos
+            anos: devocionais, metodologias de mentoria, cadernos de oração, materiais
+            de cura e transformação de mentalidade.
+          </p>
+        </div>
+
+        <div class="books-grid">
+          <article class="book-card">
+            <div class="book-tag">Metodologia</div>
+            <div class="book-title">Metodologia Synesis</div>
+            <p class="book-desc">
+              Um caminho estruturado de transformação espiritual e mental, unido a práticas
+              simples para colocar a Palavra em movimento na rotina diária.
+            </p>
+            <a href="#" class="btn btn-ghost" style="margin-top:6px; padding:6px 12px; font-size:11px;">Em breve</a>
+          </article>
+
+          <article class="book-card">
+            <div class="book-tag">Oração & Intercessão</div>
+            <div class="book-title">Metodologia Sozo</div>
+            <p class="book-desc">
+              Uma jornada prática e profunda em oração e intercessão, unindo fundamentos
+              bíblicos, experiências ministeriais e exercícios espirituais guiados.
+            </p>
+            <a href="#" class="btn btn-ghost" style="margin-top:6px; padding:6px 12px; font-size:11px;">Em breve</a>
+          </article>
+
+          <article class="book-card">
+            <div class="book-tag">Devocionais</div>
+            <div class="book-title">40 Dias com Deus</div>
+            <p class="book-desc">
+              Devocional prefaciado por Sergio Tanigawa, para um tempo intencional de
+              realinhamento do coração com Deus em 40 dias de profundidade e simplicidade.
+            </p>
+            <a href="#" class="btn btn-ghost" style="margin-top:6px; padding:6px 12px; font-size:11px;">Saiba mais</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETO NR-1 -->
+    <section id="nr1">
+      <div class="shell">
+        <div class="section-heading">
+          <h2>Projeto NR-1 Instituto Tanigawa</h2>
+          <p>
+            Mais do que cumprir norma: criar ambientes de trabalho saudáveis, seguros e
+            humanos, onde colaboradores são vistos como pessoas, não apenas indicadores.
+          </p>
+        </div>
+
+        <div class="nr-panel">
+          <div class="nr-panel-inner">
+            <div class="pill-row">
+              <span class="pill-soft">Empresas</span>
+              <span class="pill-soft">NR-1, PGR, GRO</span>
+              <span class="pill-soft">Saúde mental & psicossocial</span>
+            </div>
+            <h3 class="nr-title">Conformidade, cuidado e cultura saudável em um só ecossistema</h3>
+            <p class="nr-text">
+              O Projeto NR-1 do Instituto Tanigawa integra diagnóstico psicossocial,
+              automações, relatórios e acompanhamento de colaboradores em uma abordagem
+              que une legislação, tecnologia e cuidado genuíno com pessoas. Não é apenas
+              “cumprir a norma”, mas construir ambientes mais justos, seguros e humanos.
+            </p>
+
+            <div class="nr-badges">
+              <span class="nr-badge">Diagnóstico psicossocial estruturado</span>
+              <span class="nr-badge">Ferramentas digitais, tokens e relatórios</span>
+              <span class="nr-badge">Suporte técnico e humano para líderes</span>
+            </div>
+
+            <p class="nr-sub">
+              Para empresas, RHs, igrejas, escolas e organizações que desejam estar em
+              conformidade com o MTE e, ao mesmo tempo, cuidar de quem faz tudo acontecer.
+            </p>
+
+            <div style="margin-top:14px;">
+              <a href="#contato" class="btn btn-primary" style="font-size:12px;">
+                Falar sobre NR-1 para minha empresa
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section id="depoimentos">
+      <div class="shell">
+        <div class="section-heading">
+          <h2>Histórias de transformação</h2>
+          <p>
+            Alguns dos muitos testemunhos de pessoas, líderes e empresas impactados ao longo
+            da jornada — vidas reais, processos reais, frutos consistentes.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial">
+            <p>
+              “Cheguei esgotado, em meio a decisões difíceis no ministério e na empresa.
+              Na mentoria, encontrei clareza, direção espiritual e ferramentas práticas
+              para reposicionar tudo. Hoje caminho mais leve e focado.”
+            </p>
+            <strong>Líder e empresário</strong>
+            <span>Mentoria Individual</span>
+          </div>
+
+          <div class="testimonial">
+            <p>
+              “O discipulado nos ajudou a restaurar a comunicação em casa, ajustar
+              prioridades e trazer Deus de volta ao centro do casamento e da família.”
+            </p>
+            <strong>Casal</strong>
+            <span>Discipulado & Família</span>
+          </div>
+
+          <div class="testimonial">
+            <p>
+              “O projeto NR-1 nos deu segurança jurídica e, ao mesmo tempo, abriu
+              conversas profundas sobre saúde mental na empresa. Não foi só um projeto
+              técnico, foi um divisor de águas na nossa cultura.”
+            </p>
+            <strong>Diretoria de empresa</strong>
+            <span>Projeto NR-1</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECURSO GRATUITO -->
+    <section id="recurso">
+      <div class="shell">
+        <div class="free-panel">
+          <div>
+            <h3>Receba conteúdos e recursos exclusivos do Instituto Tanigawa</h3>
+            <p>
+              Devocionais, insights de mentoria, materiais de oração, conteúdos sobre família
+              e liderança, além de novidades sobre livros e o Projeto NR-1.
+            </p>
+          </div>
+          <form class="free-form" action="#" method="post">
+            <input type="email" name="email" placeholder="Seu melhor e-mail" required />
+            <button type="submit" class="btn btn-primary" style="font-size:12px;">Quero receber</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato">
+      <div class="shell">
+        <div class="section-heading">
+          <h2>Vamos discernir juntos o próximo passo?</h2>
+          <p>
+            Envie sua mensagem e conte em poucas linhas como podemos caminhar com você:
+            mentoria, discipulado, aconselhamento, NR-1 para sua empresa ou outra demanda
+            específica.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <form class="contact-form" action="#" method="post">
+            <div class="field-group">
+              <label for="nome">Nome completo</label>
+              <input id="nome" name="nome" type="text" placeholder="Como podemos te chamar?" required />
+            </div>
+
+            <div class="field-group">
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" placeholder="Seu melhor e-mail" required />
+            </div>
+
+            <div class="field-group">
+              <label for="tipo">Você é</label>
+              <select id="tipo" name="tipo">
+                <option value="">Selecione uma opção</option>
+                <option value="pessoa">Pessoa / Família</option>
+                <option value="pastor">Pastor / Líder ministerial</option>
+                <option value="empresario">Empresário / Diretoria</option>
+                <option value="igreja">Igreja / Ministério</option>
+                <option value="empresa">Empresa (NR-1 / corporativo)</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" placeholder="Conte resumidamente sua história ou necessidade."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="margin-top:4px;">
+              Enviar mensagem
+            </button>
+          </form>
+
+          <div class="contact-info">
+            <p>
+              Atendemos pessoas, famílias, líderes, igrejas e empresas em todo o Brasil
+              e também fora do país, com encontros on-line e, em alguns casos, presenciais.
+            </p>
+            <p>
+              Para convites, parcerias ou projetos específicos, compartilhe detalhes no
+              formulário ou entre em contato pelos nossos canais oficiais.
+            </p>
+
+            <div class="contact-taglist">
+              <span class="contact-tag">Mentoria</span>
+              <span class="contact-tag">Discipulado</span>
+              <span class="contact-tag">Família</span>
+              <span class="contact-tag">NR-1 & corporativo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <div>© <span id="year"></span> Instituto Tanigawa. Todos os direitos reservados.</div>
+      <div class="footer-links">
+        <a href="#topo">Voltar ao topo</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Atualiza ano automaticamente
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Scroll suave para elementos com data-scroll-target
+    document.querySelectorAll("[data-scroll-target]").forEach(function (el) {
+      el.addEventListener("click", function () {
+        var target = el.getAttribute("data-scroll-target");
+        if (!target) return;
+        var node = document.querySelector(target);
+        if (node) node.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+
+    // Toggle de tema claro/escuro
+    var themeToggle = document.getElementById("themeToggle");
+    function setTheme(theme) {
+      document.body.setAttribute("data-theme", theme);
+      themeToggle.textContent = theme === "dark" ? "Modo Claro" : "Modo Escuro";
+    }
+
+    themeToggle.addEventListener("click", function () {
+      var current = document.body.getAttribute("data-theme") || "light";
+      setTheme(current === "light" ? "dark" : "light");
+    });
+  </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instituto Tanigawa</title>
+    <title>Instituto Tanigawa | Excelência em Treinamento</title>
+    <!-- Carrega a biblioteca Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuração do Tailwind para usar a fonte Inter e cores customizadas -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0056B3', // Azul profundo
+                        'secondary': '#00b35c', // Verde para destaque
+                        'background': '#f8f9fa',
+                        'text-dark': '#343a40',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-        h1 { color: #333; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
     </style>
 </head>
 <body>
-    <h1>Bem-vindo ao Instituto Tanigawa!</h1>
-    <p>Este é o nosso site em construção.</p>
-    <p>Em breve, teremos mais informações e conteúdo.</p>
+
+    <!-- CABEÇALHO (Header) - Barra de Navegação -->
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Nome do Instituto -->
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-xl font-bold text-primary hover:text-secondary transition duration-300">Instituto Tanigawa</a>
+                </div>
+                <!-- Links de Navegação (Menu) -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-primary font-bold transition duration-300 border-b-2 border-primary">Home</a>
+                    <a href="sobre.html" class="text-text-dark hover:text-secondary font-medium transition duration-300">Sobre Nós</a>
+                    <a href="servicos.html" class="text-text-dark hover:text-secondary font-medium transition duration-300">Serviços</a>
+                    <a href="contato.html" class="text-text-dark hover:text-secondary font-medium transition duration-300">Contato</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- SEÇÃO PRINCIPAL - Hero/Chamada Principal -->
+    <main class="py-16 sm:py-24 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p class="text-lg font-semibold text-secondary mb-3">CONHECIMENTO QUE TRANSFORMA</p>
+                <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold text-text-dark leading-tight mb-6">
+                    Lidere o <span class="text-primary">Futuro</span> com <br class="hidden sm:inline"> Formação de Alto Nível
+                </h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-10">
+                    O Instituto Tanigawa é a sua ponte para a excelência em gestão, tecnologia e desenvolvimento pessoal.
+                </p>
+                
+                <!-- Botões de Ação -->
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="servicos.html" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full shadow-lg text-white bg-primary hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+                        Ver Nossos Cursos
+                    </a>
+                    <a href="contato.html" class="inline-flex items-center justify-center px-8 py-3 border-2 border-primary text-base font-medium rounded-full text-primary bg-white hover:bg-gray-50 transition duration-300 transform hover:scale-105">
+                        Fale Conosco
+                    </a>
+                </div>
+            </div>
+
+            <!-- Destaque de Diferenciais -->
+            <div class="mt-20 grid md:grid-cols-3 gap-8 text-center">
+                <div class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-secondary">
+                    <div class="text-4xl text-secondary mb-3">💡</div>
+                    <h3 class="text-xl font-bold text-text-dark mb-2">Metodologia Prática</h3>
+                    <p class="text-gray-600">Foco na aplicação imediata do conhecimento no seu dia a dia.</p>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-primary">
+                    <div class="text-4xl text-primary mb-3">🎓</div>
+                    <h3 class="text-xl font-bold text-text-dark mb-2">Instrutores Experientes</h3>
+                    <p class="text-gray-600">Corpo docente composto por líderes de mercado e especialistas.</p>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-yellow-500">
+                    <div class="text-4xl text-yellow-500 mb-3">🚀</div>
+                    <h3 class="text-xl font-bold text-text-dark mb-2">Resultados Comprovados</h3>
+                    <p class="text-gray-600">Mais de X clientes transformando suas carreiras e negócios.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- RODAPÉ (Footer) -->
+    <footer class="bg-text-dark text-white mt-12 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Instituto Tanigawa. Todos os direitos reservados.</p>
+            <div class="mt-2 text-sm text-gray-400">
+                <a href="#" class="hover:text-primary mx-2">Política de Privacidade</a> | 
+                <a href="#" class="hover:text-primary mx-2">Termos de Uso</a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
+
+<!-- CTA MENTORIAS – PRÉ-CADASTRO -->
+<section id="mentorias-cadastro">
+  <div class="shell">
+    <div class="section-heading">
+      <h2>Interessado em mentoria, discipulado ou aconselhamento?</h2>
+      <p>
+        Se ao ler sobre o Instituto Tanigawa algo tocou o seu coração, se você sente que
+        precisa alinhar a vida, o casamento, o ministério ou os negócios com o que Deus
+        tem falado, este é o próximo passo: contar sua história e permitir que a gente
+        caminhe junto com você de forma responsável, profunda e personalizada.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="pill-row">
+        <span class="pill-soft">Pré-cadastro</span>
+        <span class="pill-soft">Mentoria • Discipulado • Aconselhamento</span>
+      </div>
+      <h3 style="margin-top:8px;">Faça seu pré-cadastro para a próxima turma ou atendimento</h3>
+      <p style="font-size:14px; color:var(--text-soft); margin-top:6px;">
+        Criamos um formulário simples para conhecer melhor você, sua realidade e o que
+        está buscando. Com base nisso, nossa equipe avalia o melhor encaixe: mentoria
+        individual, para casal, grupo, discipulado ou acompanhamento específico.
+      </p>
+
+      <p style="font-size:13px; color:var(--text-soft); margin:10px 0;">
+        Ao enviar seu pré-cadastro, você não assume nenhum compromisso imediato. É o
+        primeiro passo para discernirmos juntos se este é o tempo e o formato adequados
+        para o que Deus está construindo na sua vida.
+      </p>
+
+      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-top:10px;">
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/11gIdG5KIuAzpbALiBH603WWDiWjO4TYPcO_TH65OzAw/preview" target="_blank" rel="noopener">
+          Fazer meu pré-cadastro agora
+        </a>
+        <span style="font-size:12px; color:var(--text-soft);">
+          Leva poucos minutos e nos ajuda a cuidar melhor de você.
+        </span>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,157 @@
+!DOCTYPE html
+html lang=pt-BR
+head
+    meta charset=UTF-8
+    meta name=viewport content=width=device-width, initial-scale=1.0
+    titleServiços  Instituto Tanigawatitle
+    !-- Carrega a biblioteca Tailwind CSS --
+    script src=httpscdn.tailwindcss.comscript
+    !-- Configuração do Tailwind para usar a fonte Inter e cores customizadas --
+    script
+        tailwind.config = {
+            theme {
+                extend {
+                    colors {
+                        'primary' '#0056B3',  Azul profundo
+                        'secondary' '#00b35c',  Verde para destaque
+                        'background' '#f8f9fa',
+                        'text-dark' '#343a40',
+                    },
+                    fontFamily {
+                        sans ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    script
+    style
+        body {
+            font-family 'Inter', sans-serif;
+            background-color #f8f9fa;
+        }
+    style
+head
+body
+
+    !-- CABEÇALHO (Header) - Barra de Navegação --
+    header class=bg-white shadow-md sticky top-0 z-10
+        div class=max-w-7xl mx-auto px-4 smpx-6 lgpx-8
+            div class=flex justify-between items-center h-16
+                !-- LogoNome do Instituto --
+                div class=flex-shrink-0
+                    a href=index.html class=text-xl font-bold text-primary hovertext-secondary transition duration-300Instituto Tanigawaa
+                div
+                !-- Links de Navegação (Menu) --
+                nav class=hidden mdflex space-x-8
+                    a href=index.html class=text-text-dark hovertext-secondary font-medium transition duration-300Homea
+                    a href=sobre.html class=text-text-dark hovertext-secondary font-medium transition duration-300Sobre Nósa
+                    a href=servicos.html class=text-primary font-bold transition duration-300 border-b-2 border-primaryServiçosa
+                    a href=contato.html class=text-text-dark hovertext-secondary font-medium transition duration-300Contatoa
+                nav
+            div
+        div
+    header
+
+    !-- SEÇÃO PRINCIPAL - Serviços --
+    main class=py-16 smpy-24
+        div class=max-w-7xl mx-auto px-4 smpx-6 lgpx-8
+            
+            !-- Título Principal --
+            div class=text-center mb-16
+                p class=text-lg font-semibold text-secondary mb-3OFERECEMOS SOLUÇÕES PARA SEU CRESCIMENTOp
+                h1 class=text-4xl smtext-5xl font-extrabold text-primary mb-4Nossos Serviços de Treinamento e Consultoriah1
+                p class=text-xl text-gray-600 max-w-4xl mx-auto
+                    Do desenvolvimento de liderança à capacitação técnica especializada, encontre o caminho ideal para a excelência de sua equipe e carreira.
+                p
+            div
+
+            !-- Grid de Cartões de Serviço --
+            div class=grid mdgrid-cols-2 lggrid-cols-3 gap-10
+
+                !-- Serviço 1 Liderança e Gestão --
+                div class=bg-white p-8 rounded-xl shadow-xl hovershadow-2xl transition duration-300 border-t-8 border-primary flex flex-col
+                    div class=text-4xl text-primary mb-4👑div
+                    h2 class=text-2xl font-bold text-text-dark mb-3Treinamentos de Liderançah2
+                    p class=text-gray-600 mb-6 flex-grow
+                        Programas focados em desenvolver líderes inspiradores, capazes de tomar decisões estratégicas e gerir equipes de alta performance em ambientes complexos.
+                    p
+                    a href=contato.html class=text-primary font-semibold hovertext-secondary transition duration-300 self-startSaiba Mais &rarr;a
+                div
+
+                !-- Serviço 2 Tecnologia e Inovação --
+                div class=bg-white p-8 rounded-xl shadow-xl hovershadow-2xl transition duration-300 border-t-8 border-secondary flex flex-col
+                    div class=text-4xl text-secondary mb-4💻div
+                    h2 class=text-2xl font-bold text-text-dark mb-3Capacitação Técnica (TI & Data)h2
+                    p class=text-gray-600 mb-6 flex-grow
+                        Cursos avançados em Big Data, Inteligência Artificial, Cibersegurança e Metodologias Ágeis, preparando profissionais para a transformação digital.
+                    p
+                    a href=contato.html class=text-primary font-semibold hovertext-secondary transition duration-300 self-startSaiba Mais &rarr;a
+                div
+
+                !-- Serviço 3 Desenvolvimento Comportamental --
+                div class=bg-white p-8 rounded-xl shadow-xl hovershadow-2xl transition duration-300 border-t-8 border-yellow-500 flex flex-col
+                    div class=text-4xl text-yellow-500 mb-4🧠div
+                    h2 class=text-2xl font-bold text-text-dark mb-3Habilidades de Comunicaçãoh2
+                    p class=text-gray-600 mb-6 flex-grow
+                        Workshops de oratória, negociação e inteligência emocional. Ferramentas essenciais para melhorar a interação, o clima organizacional e a persuasão.
+                    p
+                    a href=contato.html class=text-primary font-semibold hovertext-secondary transition duration-300 self-startSaiba Mais &rarr;a
+                div
+
+                !-- Serviço 4 Consultoria Personalizada --
+                div class=bg-white p-8 rounded-xl shadow-xl hovershadow-2xl transition duration-300 border-t-8 border-gray-400 flex flex-col
+                    div class=text-4xl text-gray-700 mb-4📈div
+                    h2 class=text-2xl font-bold text-text-dark mb-3Consultoria Corporativah2
+                    p class=text-gray-600 mb-6 flex-grow
+                        Análise, diagnóstico e implementação de soluções personalizadas para otimização de processos e reestruturação estratégica dentro da sua empresa.
+                    p
+                    a href=contato.html class=text-primary font-semibold hovertext-secondary transition duration-300 self-startSaiba Mais &rarr;a
+                div
+
+                !-- Serviço 5 Formação In-Company --
+                div class=bg-white p-8 rounded-xl shadow-xl hovershadow-2xl transition duration-300 border-t-8 border-red-500 flex flex-col
+                    div class=text-4xl text-red-500 mb-4🏢div
+                    h2 class=text-2xl font-bold text-text-dark mb-3Programas In-Companyh2
+                    p class=text-gray-600 mb-6 flex-grow
+                        Desenvolvemos e aplicamos treinamentos exclusivos, totalmente adaptados às necessidades, cultura e desafios específicos da sua organização.
+                    p
+                    a href=contato.html class=text-primary font-semibold hovertext-secondary transition duration-300 self-startSaiba Mais &rarr;a
+                div
+
+                !-- Serviço 6 Certificações Profissionais --
+                div class=bg-white p-8 rounded-xl shadow-xl hovershadow-2xl transition duration-300 border-t-8 border-indigo-500 flex flex-col
+                    div class=text-4xl text-indigo-500 mb-4🏅div
+                    h2 class=text-2xl font-bold text-text-dark mb-3Cursos de Certificaçãoh2
+                    p class=text-gray-600 mb-6 flex-grow
+                        Preparamos você para as principais certificações do mercado em gestão de projetos, qualidade e TI, garantindo a sua aprovação.
+                    p
+                    a href=contato.html class=text-primary font-semibold hovertext-secondary transition duration-300 self-startSaiba Mais &rarr;a
+                div
+
+            div
+            
+            !-- CTA Fundo Azul --
+            div class=mt-20 bg-primary text-white p-10 rounded-xl shadow-2xl text-center
+                h2 class=text-3xl font-extrabold mb-3Não sabe por onde começarh2
+                p class=text-xl mb-6Fale com nossos especialistas para traçar um plano de desenvolvimento ideal para você ou sua empresa.p
+                a href=contato.html class=inline-flex items-center justify-center px-10 py-3 border border-transparent text-base font-medium rounded-full shadow-lg text-primary bg-white hoverbg-gray-100 transition duration-300 transform hoverscale-105
+                    Entrar em Contato Agora
+                a
+            div
+
+        div
+    main
+
+    !-- RODAPÉ (Footer) --
+    footer class=bg-text-dark text-white mt-12 py-8
+        div class=max-w-7xl mx-auto px-4 smpx-6 lgpx-8 text-center
+            p&copy; 2025 Instituto Tanigawa. Todos os direitos reservados.p
+            div class=mt-2 text-sm text-gray-400
+                a href=# class=hovertext-primary mx-2Política de Privacidadea  
+                a href=# class=hovertext-primary mx-2Termos de Usoa
+            div
+        div
+    footer
+
+body
+html

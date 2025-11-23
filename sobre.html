@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto Tanigawa | Excelência em Treinamento</title>
+    <!-- Carrega a biblioteca Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuração do Tailwind para usar a fonte Inter e cores customizadas -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0056B3', // Azul profundo
+                        'secondary': '#00b35c', // Verde para destaque
+                        'background': '#f8f9fa',
+                        'text-dark': '#343a40',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CABEÇALHO (Header) - Barra de Navegação -->
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Nome do Instituto -->
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-xl font-bold text-primary hover:text-secondary transition duration-300">Instituto Tanigawa</a>
+                </div>
+                <!-- Links de Navegação (Menu) -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-primary font-bold transition duration-300 border-b-2 border-primary">Home</a>
+                    <a href="sobre.html" class="text-text-dark hover:text-secondary font-medium transition duration-300">Sobre Nós</a>
+                    <a href="servicos.html" class="text-text-dark hover:text-secondary font-medium transition duration-300">Serviços</a>
+                    <a href="contato.html" class="text-text-dark hover:text-secondary font-medium transition duration-300">Contato</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- SEÇÃO PRINCIPAL - Hero/Chamada Principal -->
+    <main class="py-16 sm:py-24 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p class="text-lg font-semibold text-secondary mb-3">CONHECIMENTO QUE TRANSFORMA</p>
+                <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold text-text-dark leading-tight mb-6">
+                    Lidere o <span class="text-primary">Futuro</span> com <br class="hidden sm:inline"> Formação de Alto Nível
+                </h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-10">
+                    O Instituto Tanigawa é a sua ponte para a excelência em gestão, tecnologia e desenvolvimento pessoal.
+                </p>
+                
+                <!-- Botões de Ação -->
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="servicos.html" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full shadow-lg text-white bg-primary hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+                        Ver Nossos Cursos
+                    </a>
+                    <a href="contato.html" class="inline-flex items-center justify-center px-8 py-3 border-2 border-primary text-base font-medium rounded-full text-primary bg-white hover:bg-gray-50 transition duration-300 transform hover:scale-105">
+                        Fale Conosco
+                    </a>
+                </div>
+            </div>
+
+            <!-- Destaque de Diferenciais -->
+            <div class="mt-20 grid md:grid-cols-3 gap-8 text-center">
+                <div class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-secondary">
+                    <div class="text-4xl text-secondary mb-3">💡</div>
+                    <h3 class="text-xl font-bold text-text-dark mb-2">Metodologia Prática</h3>
+                    <p class="text-gray-600">Foco na aplicação imediata do conhecimento no seu dia a dia.</p>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-primary">
+                    <div class="text-4xl text-primary mb-3">🎓</div>
+                    <h3 class="text-xl font-bold text-text-dark mb-2">Instrutores Experientes</h3>
+                    <p class="text-gray-600">Corpo docente composto por líderes de mercado e especialistas.</p>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-yellow-500">
+                    <div class="text-4xl text-yellow-500 mb-3">🚀</div>
+                    <h3 class="text-xl font-bold text-text-dark mb-2">Resultados Comprovados</h3>
+                    <p class="text-gray-600">Mais de X clientes transformando suas carreiras e negócios.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- RODAPÉ (Footer) -->
+    <footer class="bg-text-dark text-white mt-12 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Instituto Tanigawa. Todos os direitos reservados.</p>
+            <div class="mt-2 text-sm text-gray-400">
+                <a href="#" class="hover:text-primary mx-2">Política de Privacidade</a> | 
+                <a href="#" class="hover:text-primary mx-2">Termos de Uso</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
